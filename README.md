@@ -10,12 +10,13 @@ This is Zhenyu Liu's file repository for GEO1001-hw01.
 
 - [Author](#author)  
 - [Abstract](#abstract)  
-- [Python Files](#python files)  
+- [Python Files](#python-files)  
 - [Report](#report)  
 
 ## Auther
 
 [<img src="https://avatars3.githubusercontent.com/u/59593272?s=400&u=ba1618be6d5e354f0bd7685ff405bdec6d18c101&v=4" width = "50" height = "50" />](https://github.com/peterliu502)
+
 [@ Zhenyu Liu](https://github.com/peterliu502)
  
 ## Abstract  
