@@ -24,7 +24,8 @@ This is Zhenyu Liu's file repository for GEO1001-hw01.
 This repository contains:  
 
 1. The Python files used to solve the problems in [hw01](https://3d.bk.tudelft.nl/courses/geo1001/hw/01/).  
-2. The source data used for this assignment.  
-3. Analysis report of this assignment and its Latex source code.  
-4. The README.md files of this repository.  
+2. The output file of exercise A4.
+3. The source data used for this assignment.  
+4. Analysis report of this assignment and its Latex source code.  
+5. The README.md files of this repository.  
 
