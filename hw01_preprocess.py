@@ -21,3 +21,10 @@ def length_match(array1, array2):
 def rice_rule(array):
     bin_num = int(2 * np.power(len(array), (1 / 3)))
     return bin_num
+
+
+# Export the column with the same name from the dataset
+def extract_column_name(list_data, column_name):
+    list_df = [read_source_file(i) for i in list_data]
+    list_column = [i[column_name] for i in list_df]
+    return list_column
