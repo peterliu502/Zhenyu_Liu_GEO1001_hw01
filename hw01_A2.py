@@ -61,5 +61,59 @@ def cdf_plot(list_data, column_name):
     plt.show()
 
 
-sensor_name = ["HEAT - " + i + "_final.csv" for i in "ABCDE"]
-pdf_plot(sensor_name, "Temperature")
+# Plot pdf and kde of the same variable together from 5 sensors
+def pdf_and_kde(list_data, column_name):
+    list_order = ["(a) ", "(b) ", "(c) ", "(d) ", "(e) "]
+    list_column = pp.extract_column_name(list_data, column_name)
+    fig = plt.figure(figsize=(60, 40))
+    ax0 = fig.add_subplot(231)
+    sns.distplot(list_column[0], bins=pp.rice_rule(list_column[0]), kde=True, kde_kws={"linewidth": 5, "label": "KDE"},
+                 hist=True, hist_kws={"histtype": "step", "linewidth": 5, "color": "salmon", "label": "PDF"},
+                 color="cadetblue")
+    ax0.legend(loc='upper right', fontsize=50)
+    ax0.set_title(list_order[0]+list_data[0][:9], fontsize=50)
+    plt.xticks(fontsize=50)
+    plt.yticks(fontsize=50)
+    plt.xlabel(column_name, fontsize=50)
+
+    ax1 = fig.add_subplot(232)
+    sns.distplot(list_column[1], bins=pp.rice_rule(list_column[1]), kde=True, kde_kws={"linewidth": 5, "label": "KDE"},
+                 hist=True, hist_kws={"histtype": "step", "linewidth": 5, "color": "salmon", "label": "PDF"},
+                 color="cadetblue")
+    ax1.legend(loc='upper right', fontsize=50)
+    ax1.set_title(list_order[1]+list_data[1][:9], fontsize=50)
+    plt.xticks(fontsize=50)
+    plt.yticks(fontsize=50)
+    plt.xlabel(column_name, fontsize=50)
+
+    ax2 = fig.add_subplot(233)
+    sns.distplot(list_column[2], bins=pp.rice_rule(list_column[2]), kde=True, kde_kws={"linewidth": 5, "label": "KDE"},
+                 hist=True, hist_kws={"histtype": "step", "linewidth": 5, "color": "salmon", "label": "PDF"},
+                 color="cadetblue")
+    ax2.legend(loc='upper right', fontsize=50)
+    ax2.set_title(list_order[2] + list_data[2][:9], fontsize=50)
+    plt.xticks(fontsize=50)
+    plt.yticks(fontsize=50)
+    plt.xlabel(column_name, fontsize=50)
+
+    ax3 = fig.add_subplot(234)
+    sns.distplot(list_column[3], bins=pp.rice_rule(list_column[3]), kde=True, kde_kws={"linewidth": 5, "label": "KDE"},
+                 hist=True, hist_kws={"histtype": "step", "linewidth": 5, "color": "salmon", "label": "PDF"},
+                 color="cadetblue")
+    ax3.legend(loc='upper right', fontsize=50)
+    ax3.set_title(list_order[3] + list_data[3][:9], fontsize=50)
+    plt.xticks(fontsize=50)
+    plt.yticks(fontsize=50)
+    plt.xlabel(column_name, fontsize=50)
+
+    ax4 = fig.add_subplot(235)
+    sns.distplot(list_column[4], bins=pp.rice_rule(list_column[4]), kde=True, kde_kws={"linewidth": 5, "label": "KDE"},
+                 hist=True, hist_kws={"histtype": "step", "linewidth": 5, "color": "salmon", "label": "PDF"},
+                 color="cadetblue")
+    ax4.legend(loc='upper right', fontsize=50)
+    ax4.set_title(list_order[4] + list_data[4][:9], fontsize=50)
+    plt.xticks(fontsize=50)
+    plt.yticks(fontsize=50)
+    plt.xlabel(column_name, fontsize=50)
+
+    plt.show()

@@ -20,7 +20,7 @@ def multi_hist(list_data, column_name, bar_num1):
     list_column = pp.extract_column_name(list_data, column_name)
     fig = plt.figure(figsize=(40, 10))
     ax1 = fig.add_subplot(111)
-    ax1.hist(list_column, bar_num1, histtype='bar', normed=True,
+    ax1.hist(list_column, bar_num1, histtype='bar',
              color=["burlywood", "salmon", "yellowgreen", "cadetblue", "darkseagreen"],
              label=list_data)
     ax1.legend(loc='upper right', fontsize=50)
@@ -54,13 +54,10 @@ def boxplot(list_data, column_name):
     list_name = [i[:8] for i in list_data]
     fig = plt.figure(figsize=(20, 20))
     ax1 = fig.add_subplot(111)
-    ax1.boxplot(list_column, patch_artist=True, labels=list_name,
-                boxprops = {'color': 'orangered', 'facecolor': 'pink'})
+    ax1.boxplot(list_column, patch_artist=True, labels=list_name, meanprops={"linewidth": 8},
+                boxprops={'color': 'salmon', "linewidth": 8, 'facecolor': 'cadetblue'})
     plt.xticks(fontsize=50)
     plt.yticks(fontsize=50)
     plt.xlabel("sensor name", fontsize=50)
     plt.ylabel(column_name, fontsize=50)
     plt.show()
-
-
-

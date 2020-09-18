@@ -28,3 +28,10 @@ def extract_column_name(list_data, column_name):
     list_df = [read_source_file(i) for i in list_data]
     list_column = [i[column_name] for i in list_df]
     return list_column
+
+
+# Normalize data
+def normalize(my_array):
+    my_mean = np.mean(my_array)
+    my_std = np.std(my_array)
+    return (my_array - my_mean) / my_std

@@ -5,6 +5,7 @@
 
 import hw01_A1 as a1
 import hw01_A2 as a2
+import hw01_A3 as a3
 
 # Lession A1
 # A1.1
@@ -34,3 +35,10 @@ a2.pdf_plot(sensor_name, "Temperature")
 a2.cdf_plot(sensor_name, "Temperature")
 
 # A2.2
+a2.pdf_and_kde(sensor_name, "Wind Speed")
+
+# Lession A3
+# A3.1
+a3.correlations(sensor_name, "Temperature")
+a3.correlations(sensor_name, "WBGT")
+a3.correlations(sensor_name, "Crosswind Speed")
