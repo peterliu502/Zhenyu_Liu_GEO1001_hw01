@@ -35,8 +35,10 @@ def pdf_plot(list_data, column_name):
     fig = plt.figure(figsize=(20, 20))
     ax1 = fig.add_subplot(111)
     for i in range(len(list_column)):
-        sns.distplot(list_column[i], bins=pp.rice_rule(list_column[i]), label=list_data[i], hist=False,
-                     color=["burlywood", "salmon", "yellowgreen", "cadetblue", "darkseagreen"][i],)
+        [freq_density, bins] = np.histogram(list_column[i], density=True, bins=pp.rice_rule(list_column[i]))
+        bins_0 = [(bins[i] + bins[i + 1]) / 2 for i in range(len(bins) - 1)]
+        plt.plot(bins_0, freq_density, linewidth=3, label=list_data[i],
+                 color=["burlywood", "salmon", "yellowgreen", "cadetblue", "darkseagreen"][i])
     ax1.legend(loc='upper right', fontsize=50)
     plt.xticks(fontsize=50)
     plt.yticks(fontsize=50)
@@ -64,56 +66,26 @@ def cdf_plot(list_data, column_name):
 # Plot pdf and kde of the same variable together from 5 sensors
 def pdf_and_kde(list_data, column_name):
     list_order = ["(a) ", "(b) ", "(c) ", "(d) ", "(e) "]
+    # The way the serial Numbers are generated needs to be changed，
+    # if more than 5 sets of data are input.
     list_column = pp.extract_column_name(list_data, column_name)
     fig = plt.figure(figsize=(60, 40))
-    ax0 = fig.add_subplot(231)
-    sns.distplot(list_column[0], bins=pp.rice_rule(list_column[0]), kde=True, kde_kws={"linewidth": 5, "label": "KDE"},
-                 hist=True, hist_kws={"histtype": "step", "linewidth": 5, "color": "salmon", "label": "PDF"},
-                 color="cadetblue")
-    ax0.legend(loc='upper right', fontsize=50)
-    ax0.set_title(list_order[0]+list_data[0][:9], fontsize=50)
-    plt.xticks(fontsize=50)
-    plt.yticks(fontsize=50)
-    plt.xlabel(column_name, fontsize=50)
-
-    ax1 = fig.add_subplot(232)
-    sns.distplot(list_column[1], bins=pp.rice_rule(list_column[1]), kde=True, kde_kws={"linewidth": 5, "label": "KDE"},
-                 hist=True, hist_kws={"histtype": "step", "linewidth": 5, "color": "salmon", "label": "PDF"},
-                 color="cadetblue")
-    ax1.legend(loc='upper right', fontsize=50)
-    ax1.set_title(list_order[1]+list_data[1][:9], fontsize=50)
-    plt.xticks(fontsize=50)
-    plt.yticks(fontsize=50)
-    plt.xlabel(column_name, fontsize=50)
-
-    ax2 = fig.add_subplot(233)
-    sns.distplot(list_column[2], bins=pp.rice_rule(list_column[2]), kde=True, kde_kws={"linewidth": 5, "label": "KDE"},
-                 hist=True, hist_kws={"histtype": "step", "linewidth": 5, "color": "salmon", "label": "PDF"},
-                 color="cadetblue")
-    ax2.legend(loc='upper right', fontsize=50)
-    ax2.set_title(list_order[2] + list_data[2][:9], fontsize=50)
-    plt.xticks(fontsize=50)
-    plt.yticks(fontsize=50)
-    plt.xlabel(column_name, fontsize=50)
-
-    ax3 = fig.add_subplot(234)
-    sns.distplot(list_column[3], bins=pp.rice_rule(list_column[3]), kde=True, kde_kws={"linewidth": 5, "label": "KDE"},
-                 hist=True, hist_kws={"histtype": "step", "linewidth": 5, "color": "salmon", "label": "PDF"},
-                 color="cadetblue")
-    ax3.legend(loc='upper right', fontsize=50)
-    ax3.set_title(list_order[3] + list_data[3][:9], fontsize=50)
-    plt.xticks(fontsize=50)
-    plt.yticks(fontsize=50)
-    plt.xlabel(column_name, fontsize=50)
-
-    ax4 = fig.add_subplot(235)
-    sns.distplot(list_column[4], bins=pp.rice_rule(list_column[4]), kde=True, kde_kws={"linewidth": 5, "label": "KDE"},
-                 hist=True, hist_kws={"histtype": "step", "linewidth": 5, "color": "salmon", "label": "PDF"},
-                 color="cadetblue")
-    ax4.legend(loc='upper right', fontsize=50)
-    ax4.set_title(list_order[4] + list_data[4][:9], fontsize=50)
-    plt.xticks(fontsize=50)
-    plt.yticks(fontsize=50)
-    plt.xlabel(column_name, fontsize=50)
+    column_num = 3
+    if len(list_column) % column_num != 0:
+        rows_num = len(list_column) // column_num + 1
+    else:
+        rows_num = len(list_column) // column_num
+    for i in range(len(list_column)):
+        fig.add_subplot(rows_num, column_num, i + 1)
+        [freq_density, bins] = np.histogram(list_column[i], density=True, bins=pp.rice_rule(list_column[i]))
+        bins_0 = [(bins[i] + bins[i + 1]) / 2 for i in range(len(bins) - 1)]
+        plt.plot(bins_0, freq_density, linewidth=8, color="salmon", label="PDF")
+        sns.kdeplot(list_column[i], color="cadetblue",
+                    linewidth=8, label="KDE", bw=0.25)
+        plt.legend(loc='upper right', fontsize=50)
+        plt.title(list_order[i]+list_data[i][:9], fontsize=50)
+        plt.xticks(fontsize=50)
+        plt.yticks(fontsize=50)
+        plt.xlabel(column_name, fontsize=50)
 
     plt.show()
