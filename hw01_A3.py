@@ -20,11 +20,11 @@ def correlations(list_data, column_name):
             elm1_normed = pp.normalize(list_column[elm1])
             elm2_normed = pp.normalize(list_column[elm2])
             elm1_normed_matched = pp.length_match(elm1_normed, elm2_normed)
-            print("Spearmann between {0} and {1}: correlation = {2}, p-value = {3}".format(
-                list_data[elm1], list_data[elm2], str(stats.spearmanr(elm1_normed_matched, elm2_normed)[0]),
+            print("Spearmann between {0} and {1} in {2}: correlation = {3}, p-value = {4}".format(
+                list_data[elm1], list_data[elm2], column_name, str(stats.spearmanr(elm1_normed_matched, elm2_normed)[0]),
             str(stats.spearmanr(elm1_normed_matched, elm2_normed)[1])))
-            print("Pearson between {0} and {1}: correlation = {2}, p-value = {3}".format(
-                list_data[elm1], list_data[elm2], str(stats.pearsonr(elm1_normed_matched, elm2_normed)[0]),
+            print("Pearson between {0} and {1} in {2}: correlation = {3}, p-value = {4}".format(
+                list_data[elm1], list_data[elm2], column_name, str(stats.pearsonr(elm1_normed_matched, elm2_normed)[0]),
             str(stats.pearsonr(elm1_normed_matched, elm2_normed)[1])))
             fig.add_subplot(rows_num, column_num, n)
             n += 1
