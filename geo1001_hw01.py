@@ -8,6 +8,7 @@ import hw01_A2 as a2
 import hw01_A3 as a3
 import hw01_A4 as a4
 import hw01_BQ as bq
+import hw01_preprocess as pp
 
 # Lession A1
 # A1.1
@@ -18,7 +19,7 @@ a1.mean_statistics("HEAT - D_final.csv")
 a1.mean_statistics("HEAT - E_final.csv")
 
 # A1.2
-sensor_name = ["HEAT - " + i + "_final.csv" for i in "ABCDE"]
+sensor_name = pp.list_sensor_name("ABCDE")
 a1.multi_hist(sensor_name, "Temperature", 5)
 a1.multi_hist(sensor_name, "Temperature", 50)
 
@@ -48,8 +49,18 @@ a3.correlations(sensor_name, "Crosswind Speed")
 # Lession A4
 # A4.1
 a4.multi_pd_2_csv("confidence_intervals",
-               a4.cdf_ci(sensor_name, "Temperature", 0.95),
-               a4.cdf_ci(sensor_name, "Wind Speed", 0.95))
+                  a4.cdf_ci(sensor_name, "Temperature", 0.95),
+                  a4.cdf_ci(sensor_name, "Wind Speed", 0.95))
+
+# A4.2
+a4.sensors_t_test(pp.list_sensor_name("ED"), "Temperature")
+a4.sensors_t_test(pp.list_sensor_name("ED"), "Wind Speed")
+a4.sensors_t_test(pp.list_sensor_name("DC"), "Temperature")
+a4.sensors_t_test(pp.list_sensor_name("DC"), "Wind Speed")
+a4.sensors_t_test(pp.list_sensor_name("CB"), "Temperature")
+a4.sensors_t_test(pp.list_sensor_name("CB"), "Wind Speed")
+a4.sensors_t_test(pp.list_sensor_name("BA"), "Temperature")
+a4.sensors_t_test(pp.list_sensor_name("BA"), "Wind Speed")
 
 # Bonus question
 bq.date_of_extremum(sensor_name, "Temperature")

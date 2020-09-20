@@ -43,3 +43,8 @@ def append_multi_pd(*pd_objects):
     for i in pd_objects[1:]:
         pd_files = pd_files.append(i, ignore_index=True)
     return pd_files
+
+
+# Create a list contains sensors' name
+def list_sensor_name(name):
+    return ["HEAT - " + i + "_final.csv" for i in name]
