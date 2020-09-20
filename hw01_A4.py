@@ -49,9 +49,3 @@ def multi_pd_2_csv(csv_name, *pd_objects):
     for i in pd_objects[1:]:
         pd_files = pd_files.append(i, ignore_index=True)
     pd_files.to_csv('{}.csv'.format(csv_name))
-
-
-sensor_name = ["HEAT - " + i + "_final.csv" for i in "ABCDE"]
-multi_pd_2_csv("confidence_intervals",
-               cdf_ci(sensor_name, "Temperature", 0.95),
-               cdf_ci(sensor_name, "Wind Speed", 0.95))

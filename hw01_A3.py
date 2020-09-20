@@ -59,4 +59,3 @@ def mean_correlations():
     plt.xlabel("sensor", fontsize=50)
     plt.ylabel("mean correlation coefficients", fontsize=50)
     plt.show()
-

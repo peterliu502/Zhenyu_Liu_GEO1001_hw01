@@ -36,3 +36,10 @@ def normalize(my_array):
     my_std = np.std(my_array)
     return (my_array - my_mean) / my_std
 
+
+# Append multiple Dataframe in one Dataframe
+def append_multi_pd(*pd_objects):
+    pd_files = pd_objects[0]
+    for i in pd_objects[1:]:
+        pd_files = pd_files.append(i, ignore_index=True)
+    return pd_files

@@ -7,6 +7,7 @@ import hw01_A1 as a1
 import hw01_A2 as a2
 import hw01_A3 as a3
 import hw01_A4 as a4
+import hw01_BQ as bq
 
 # Lession A1
 # A1.1
@@ -49,3 +50,6 @@ a3.correlations(sensor_name, "Crosswind Speed")
 a4.multi_pd_2_csv("confidence_intervals",
                a4.cdf_ci(sensor_name, "Temperature", 0.95),
                a4.cdf_ci(sensor_name, "Wind Speed", 0.95))
+
+# Bonus question
+bq.date_of_extremum(sensor_name, "Temperature")
