@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 
-# read source data from csv file and delete rows contian nan data
+# ead source data from csv file and delete rows contian nan data
 def read_source_file(filename):
     filedir = "data/"+filename
     df = pd.read_csv(filedir, skiprows=[4], header=3)
@@ -10,7 +10,7 @@ def read_source_file(filename):
     return df
 
 
-# match array1's length and array2's length, interpolate data from array1 to the length of array2
+# Match array1's length and array2's length, interpolate data from array1 to the length of array2
 def length_match(array1, array2):
     return np.interp(np.linspace(0, len(array2), len(array2)),  # provide an array from 0 to len(array2), step is 1
                             np.linspace(0, len(array1), len(array1)),  # provide an array from 0 to len(array1), step is 1
@@ -23,7 +23,7 @@ def rice_rule(array):
     return bin_num
 
 
-# Export the column with the same name from the dataset
+# Export the columns with the same name from the dataset
 def extract_column_name(list_data, column_name):
     list_df = [read_source_file(i) for i in list_data]
     list_column = [i[column_name] for i in list_df]
