@@ -3,6 +3,7 @@ from scipy import stats
 import matplotlib.pyplot as plt
 
 
+# Calculate the Pearson and Spearmann correlation coefficients of the same variable of each 2 sensors.
 def correlations(list_data, column_name):
     list_column = pp.extract_column_name(list_data, column_name)
     fig = plt.figure(figsize=(60, 25))
@@ -36,5 +37,26 @@ def correlations(list_data, column_name):
     plt.show()
 
 
-sensor_name = ["HEAT - " + i + "_final.csv" for i in "ABCDE"]
-correlations(sensor_name, "Temperature")
+# Calculate the mean Spearmann correlation coefficients of
+# Temperature and Wet Bulb Globe Temperature (WBGT) of each 2 sensors.
+def mean_correlations():
+    list_name = ["A", "B", "C", "D", "E"]
+    data_A = [1, 0.989755695, 0.990382012, 0.986459581, 0.960448668]
+    data_B = [0.989755695, 1, 0.987651843, 0.986711767, 0.966880043]
+    data_C = [0.990382012, 0.987651843, 1, 0.989803762, 0.963344]
+    data_D = [0.986459581, 0.986711767, 0.989803762, 1, 0.962275137]
+    data_E = [0.960448668, 0.966880043, 0.963344, 0.962275137, 1]
+
+    list_data = [data_A, data_B, data_C, data_D, data_E]
+    plt.figure(figsize=(20, 20))
+    for elm in range(len(list_data)):
+        plt.scatter(list_name, list_data[elm], label=list_name[elm], marker='o', s=300,
+                    c=["burlywood", "salmon", "yellowgreen", "cadetblue", "darkseagreen"][elm])
+    plt.legend(loc='upper right', fontsize=50)
+    plt.ylim(0.96, 1.0005)
+    plt.xticks(fontsize=50)
+    plt.yticks(fontsize=50)
+    plt.xlabel("sensor", fontsize=50)
+    plt.ylabel("mean correlation coefficients", fontsize=50)
+    plt.show()
+

@@ -5,7 +5,7 @@ import numpy as np
 # read source data from csv file and delete rows contian nan data
 def read_source_file(filename):
     filedir = "data/"+filename
-    df = pd.read_csv(filedir, skiprows=[4], header=3, parse_dates=['FORMATTED DATE-TIME'])
+    df = pd.read_csv(filedir, skiprows=[4], header=3)
     df.dropna()
     return df
 
@@ -35,3 +35,4 @@ def normalize(my_array):
     my_mean = np.mean(my_array)
     my_std = np.std(my_array)
     return (my_array - my_mean) / my_std
+

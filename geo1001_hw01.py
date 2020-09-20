@@ -6,6 +6,7 @@
 import hw01_A1 as a1
 import hw01_A2 as a2
 import hw01_A3 as a3
+import hw01_A4 as a4
 
 # Lession A1
 # A1.1
@@ -42,3 +43,9 @@ a2.pdf_and_kde(sensor_name, "Wind Speed")
 a3.correlations(sensor_name, "Temperature")
 a3.correlations(sensor_name, "WBGT")
 a3.correlations(sensor_name, "Crosswind Speed")
+
+# Lession A4
+# A4.1
+a4.multi_pd_2_csv("confidence_intervals",
+               a4.cdf_ci(sensor_name, "Temperature", 0.95),
+               a4.cdf_ci(sensor_name, "Wind Speed", 0.95))
