@@ -67,23 +67,74 @@ This file contains functions used to preprocess data.
   Export the columns with the same name from the dataset.  
   
   * [![normalize()](https://img.shields.io/badge/function-normalize()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_preprocess.py#L33)  
+  Normalize data.  
+  
+  * [![append_multi_pd()](https://img.shields.io/badge/function-append__multi__pd()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_preprocess.py#L40)  
   Append multiple Dataframe in one Dataframe.  
+  
+  * [![list_sensor_name()](https://img.shields.io/badge/function-list__sensor__name()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_preprocess.py#L48)  
+  Create a list contains sensors' name.  
   
 * [![hw01_A1](https://img.shields.io/badge/Python_file-hw01__A1-yellow)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A1.py)  
 This file contains functions used to solve questions in `exercise A1`.  
 
+  * [![mean_statistics()](https://img.shields.io/badge/function-mean__statistics()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A1.py#L6)  
+  Compute mean statistics (mean, variance and standard deviation for specified column of the data).
+    
+  * [![multi_hist()](https://img.shields.io/badge/function-multi__hist()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A1.py#L18)  
+  Plot the same variable from 5 sensors in a mulit-hist graph.  
+
+  * [![freq_polygons()](https://img.shields.io/badge/function-freq__polygons()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A1.py#L34)  
+  Plot the same variable from 5 sensors in a frequency polygon.  
+  
+  * [![boxplot()](https://img.shields.io/badge/function-boxplot()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A1.py#L51)  
+  Plot the same variable from 5 sensors in a box plot.  
+
 * [![hw01_A2](https://img.shields.io/badge/Python_file-hw01__A2-yellow)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A2.py)  
-This file contains functions used to solve questions in `exercise A2`.  
+This file contains functions used to solve questions in `exercise A2`.    
+  
+  * [![pmf_plot()](https://img.shields.io/badge/function-pmf__plot()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A2.py#L7)  
+  Plot pmf of the same variable from 5 sensors.  
+  
+  * [![pdf_plot()](https://img.shields.io/badge/function-pdf__plot()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A2.py#L32)  
+  Plot pdf of the same variable from 5 sensors.  
+
+  * [![cdf_plot()](https://img.shields.io/badge/function-cdf__plot()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A2.py#L49)  
+  Plot cdf of the same variable from 5 sensors.  
+
+  * [![pdf_and_kde()](https://img.shields.io/badge/function-pdf__and__kde()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A2.py#L66)  
+  Plot pdf and kde of the same variable together from 5 sensors.  
 
 * [![hw01_A3](https://img.shields.io/badge/Python_file-hw01__A3-yellow)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A3.py)  
 This file contains functions used to solve questions in `exercise A3`.  
-
+  
+  * [![correlations()](https://img.shields.io/badge/function-correlations()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A3.py#L6)  
+  Calculate the Pearson and Spearmann correlation coefficients of the same variable of each 2 sensors.  
+  
+  * [![mean_correlations()](https://img.shields.io/badge/function-mean__correlations()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A3.py#L40)  
+  Calculate the mean Spearmann correlation coefficients of Temperature and Wet Bulb Globe Temperature (WBGT) of each 2 sensors.  
+  
 * [![hw01_A4](https://img.shields.io/badge/Python_file-hw01__A4-yellow)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A4.py)  
 This file contains functions used to solve questions in `exercise A4`.  
+
+  * [![cdf_ci()](https://img.shields.io/badge/function-cdf__ci()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A4.py#L8)  
+  Plot cdf and its confidence intervals of the same variable from 5 sensors and output the confidence intervals in a csv file.  
+
+  * [![multi_pd_2_csv()](https://img.shields.io/badge/function-multi__pd__2__csv()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A4.py#L55)  
+  Transfer multi-pandas Dataframe files to one csv file.  
+
+  * [![sensors_t_test()](https://img.shields.io/badge/function-sensors__t__test()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_A4.py#L63)  
+  Compute the T-Test for a variable between 2 sensors.  
 
 * [![hw01_BQ](https://img.shields.io/badge/Python_file-hw01__BQ-yellow)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_BQ.py)  
 This file contains functions used to solve `bonus question`.  
 
+  * [![list_of_date()](https://img.shields.io/badge/function-list__of__date()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_BQ.py#L5)  
+  Extract the "date" field from the "FORMATTED DATE-TIME" field, and output in a list.  
+  
+  * [![date_of_extremum()](https://img.shields.io/badge/function-date__of__extremum()-green)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/hw01_BQ.py#L19)  
+  Extract the "date" field from the "FORMATTED DATE-TIME" field, and output in a list.  
+  
 ## Other Files  
 A brief introduction to each non-Python file. 
 Click the icons to jump to the corresponding folders, files and code.  
@@ -92,10 +143,14 @@ Click the icons to jump to the corresponding folders, files and code.
 This file describes the basic information of repository `Zhenyu_Liu_GEO1001_hw01`.
 
 * [![confidence_intervals.csv](https://img.shields.io/badge/other_file-confidence__intervals.csv-yellowgreen)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/confidence_intervals.csv)  
-This file records the confidence intervals information (upper limits and lower limits) of CDF of `Temperature` and `Wind Speed` data from 5 sensors.  
+This file records the confidence intervals information (upper limits and lower limits) of CDF of Temperature and Wind Speed data from 5 sensors.  
 
-* Analysis report  
+* [![Analysis_report](https://img.shields.io/badge/other_file-Analysis_report-yellowgreen)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/blob/master/%5BZhenyu%20Liu%5DTUDelft_GEO1001_hw01.pdf)    
+This PDF file is the analysis report of the `assignment1`.
 
-* Latex source file  
+* [![Latex source file](https://img.shields.io/badge/other_file-Latex_source_file-yellowgreen)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/tree/master/%5BZhenyu%20Liu%5DTUDelft_GEO1001_hw01)   
+This folder contains source code and raw materials of the analysis report.  
+The Latex code can run and generates PDF file successfully on Overleaf.  
 
-* Source data  
+* [![Source data](https://img.shields.io/badge/other_file-Source_data-yellowgreen)](https://github.com/peterliu502/Zhenyu_Liu_GEO1001_hw01/tree/master/data)  
+The source data of this assignment，[Source link](https://data.4tu.nl/articles/dataset/Measured_Climate_Data_in_Rijsenhout/12833918/1)   

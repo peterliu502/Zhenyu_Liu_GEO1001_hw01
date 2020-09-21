@@ -10,16 +10,17 @@ import hw01_A4 as a4
 import hw01_BQ as bq
 import hw01_preprocess as pp
 
+sensor_name = pp.list_sensor_name("ABCDE")
+
 # Lession A1
 # A1.1
-a1.mean_statistics("HEAT - A_final.csv")
-a1.mean_statistics("HEAT - B_final.csv")
-a1.mean_statistics("HEAT - C_final.csv")
-a1.mean_statistics("HEAT - D_final.csv")
-a1.mean_statistics("HEAT - E_final.csv")
+a1.mean_statistics(sensor_name[0])
+a1.mean_statistics(sensor_name[1])
+a1.mean_statistics(sensor_name[2])
+a1.mean_statistics(sensor_name[3])
+a1.mean_statistics(sensor_name[4])
 
 # A1.2
-sensor_name = pp.list_sensor_name("ABCDE")
 a1.multi_hist(sensor_name, "Temperature", 5)
 a1.multi_hist(sensor_name, "Temperature", 50)
 

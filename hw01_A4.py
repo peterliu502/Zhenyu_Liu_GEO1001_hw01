@@ -52,6 +52,7 @@ def cdf_ci(list_data, column_name, confidence_rate):
     return ci_boundary
 
 
+# Transfer multi-pandas Dataframe files to one csv file
 def multi_pd_2_csv(csv_name, *pd_objects):
     pd_files = pd_objects[0]
     for i in pd_objects[1:]:
@@ -59,6 +60,7 @@ def multi_pd_2_csv(csv_name, *pd_objects):
     pd_files.to_csv('{}.csv'.format(csv_name))
 
 
+# Compute the T-Test for a variable between 2 sensors
 def sensors_t_test(sensor_name_list, column_name):
     list_column = pp.extract_column_name(sensor_name_list, column_name)
     t_value, p_value = stats.ttest_ind(list_column[0], list_column[1])

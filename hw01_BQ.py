@@ -2,8 +2,6 @@ import pandas as pd
 import hw01_preprocess as pp
 
 
-sensor_name = ["HEAT - " + i + "_final.csv" for i in "ABCDE"]
-
 # Extract the "date" field from the "FORMATTED DATE-TIME" field, and output in a list.
 def list_of_date(list_time):
     list_date = []
@@ -39,7 +37,3 @@ def date_of_extremum(list_data, column_name):
     temp_min_date = data_temp_mean[data_temp_mean["Mean " + column_name] == temp_min]["date"]
     print("The hottest day is {0}, its mean temperature is {1}°C.".format(temp_max_date.values[0], temp_max))
     print("The coldest day is {0}, its mean temperature is {1}°C.".format(temp_min_date.values[0], temp_min))
-
-
-
-

@@ -48,7 +48,7 @@ def freq_polygons(list_data, column_name):
     plt.show()
 
 
-# Plot the same variable from 5 sensors in a frequency polygon
+# Plot the same variable from 5 sensors in a box plot
 def boxplot(list_data, column_name):
     list_column = pp.extract_column_name(list_data, column_name)
     list_name = [i[:8] for i in list_data]

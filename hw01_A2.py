@@ -87,5 +87,4 @@ def pdf_and_kde(list_data, column_name):
         plt.xticks(fontsize=50)
         plt.yticks(fontsize=50)
         plt.xlabel(column_name, fontsize=50)
-
     plt.show()
